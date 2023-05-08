@@ -3,12 +3,7 @@
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  final int total_button;
-
-  CustomBottomNavigationBar({
-    Key? key,
-    required this.total_button,
-  }) : super(key: key);
+  CustomBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

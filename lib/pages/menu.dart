@@ -18,126 +18,138 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Appbar(),
-      body: Column(children: [
-        SizedBox(
-          height: 15,
-        ),
-        Center(
-          child: Text(
-            "Menu",
-            style: TextStyle(
-                fontSize: 40,
-                color: Color(0xFF101751),
-                fontWeight: FontWeight.bold),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 15,
           ),
-        ),
-        SizedBox(
-          height: 30,
-        ),
-        Container(
-          child: Row(
-            children: [
-              SizedBox(
-                width: 40,
-              ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
-                    child: MenuIconButton(
-                        icon_img: 'assets/images/Cltsgriséexxxhdpi.png',
-                        screen_name: "screen to open"),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: 10),
-                    child: Text(
-                      "Clients",
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Color(0xFFe7e7e7),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  )
-                ],
-              ),
-              Spacer(),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
-                    child: MenuIconButton(
-                        icon_img: 'assets/images/Contactsgriséxxxhdpi.png',
-                        screen_name: "screen to open"),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: 10),
-                    child: Text(
-                      "Contacts",
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Color(0xFFe7e7e7),
-                          fontWeight: FontWeight.bold),
-                    ),
-                  )
-                ],
-              ),
-              Spacer(),
-              Column(
-                children: [
-                  Container(
+          Center(
+            child: Text(
+              "Menu",
+              style: TextStyle(
+                  fontSize: 40,
+                  color: Color(0xFF101751),
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Container(
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 40,
+                ),
+                Column(
+                  children: [
+                    Container(
                       padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
                       child: MenuIconButton(
-                          icon_img: 'assets/images/Dossiersgriséexxxhdpi.png',
-                          screen_name: "screen to open")),
-                  Container(
-                    padding: EdgeInsets.only(right: 10),
-                    child: Text(
-                      "Dossiers",
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Color(0xFFe7e7e7),
-                          fontWeight: FontWeight.bold),
+                          icon_img: 'assets/images/Cltsgriséexxxhdpi.png',
+                          screen_name: "screen to open"),
                     ),
-                  )
-                ],
-              ),
-              SizedBox(
-                width: 40,
-              ),
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: [
-              SizedBox(
-                width: 40,
-              ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
-                    child: MenuIconButton(
-                        icon_img: 'assets/images/Agenda.png',
-                        screen_name: "screen to open"),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(right: 10),
-                    child: Text(
-                      "Agenda",
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Color(0xFFe7e7e7),
-                          fontWeight: FontWeight.bold),
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Clients",
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFFe7e7e7),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+                Spacer(),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
+                      child: MenuIconButton(
+                          icon_img: 'assets/images/Contactsgriséxxxhdpi.png',
+                          screen_name: "screen to open"),
                     ),
-                  )
-                ],
-              ),
-            ],
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Contacts",
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFFe7e7e7),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+                Spacer(),
+                Column(
+                  children: [
+                    Container(
+                        padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
+                        child: MenuIconButton(
+                            icon_img: 'assets/images/Dossiersgriséexxxhdpi.png',
+                            screen_name: "screen to open")),
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Dossiers",
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFFe7e7e7),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  width: 40,
+                ),
+              ],
+            ),
           ),
-        ),
-      ]),
-      bottomNavigationBar: CustomBottomNavigationBar(total_button: 2),
+          Container(
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 40,
+                ),
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
+                      child: MenuIconButton(
+                          icon_img: 'assets/images/Agenda.png',
+                          screen_name: "screen to open"),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child: Text(
+                        "Agenda",
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFFe7e7e7),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: Container(
+      //   height: 80.0,
+      //   width: 80.0,
+      //   child: FloatingActionButton(
+      //     backgroundColor: Color(0xFF101751),
+      //     onPressed: () {},
+      //     child: Image.asset('assets/images/Fichier14@2x.png', height: 60),
+      //   ),
+      // ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
