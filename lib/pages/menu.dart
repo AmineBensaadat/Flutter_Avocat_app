@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../shared/appbar.dart';
+import '../shared/custom_bottom_navigation_bar.dart';
 import '../shared/menu_icon_button.dart';
 
 class Menu extends StatefulWidget {
@@ -136,21 +137,7 @@ class _MenuState extends State<Menu> {
           ),
         ),
       ]),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color(0xFF101751),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: ("Search"),
-          ),
-        ],
-        currentIndex: 0,
-        onTap: (int index) {},
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(total_button: 2),
     );
   }
 }
