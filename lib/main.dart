@@ -1,9 +1,13 @@
 import 'package:avocat/pages/about_screen.dart';
+import 'package:avocat/pages/folders.dart';
 import 'package:avocat/pages/forgot_password.dart';
+import 'package:avocat/pages/list_of_folders.dart';
 import 'package:avocat/pages/login.dart';
 import 'package:avocat/pages/menu.dart';
 import 'package:avocat/pages/reset_password.dart';
 import 'package:avocat/pages/signup.dart';
+import 'package:avocat/pages/simple_dashboard.dart';
+import 'package:avocat/pages/two_column_dashboard.dart';
 //import 'package:avocat/pages/welcome.dart';
 import 'package:flutter/material.dart';
 
@@ -19,8 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // on the FirstScreen widget.
-      initialRoute: '/menu',
+      initialRoute: '/Foldes',
+      // initialRoute: '/ListOfFolders',
+      // initialRoute: '/SimpleDashboard',
+      // initialRoute: '/DashboardTwoColumnCards',
+
       // routes
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
@@ -31,6 +38,11 @@ class MyApp extends StatelessWidget {
         '/forgotPassword': (context) => const ForgotPassword(),
         '/aboutScreen': (context) => const AboutScreen(),
         '/menu': (context) => const Menu(),
+        '/Foldes': (context) => const Folders(),
+        '/ListOfFolders': (context) => const ListOfFolders(),
+        '/SimpleDashboard': (context) => const SimpleDashboard(),
+        '/DashboardTwoColumnCards': (context) =>
+            const DashboardTwoColumnCards(),
       },
     );
   }
