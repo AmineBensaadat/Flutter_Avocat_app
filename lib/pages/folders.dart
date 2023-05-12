@@ -13,11 +13,70 @@ class Folders extends StatefulWidget {
 }
 
 class _FoldersState extends State<Folders> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       appBar: Appbar(),
+      key: scaffoldKey,
+      drawer: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 130, 0, 0),
+        child: Drawer(
+            child: ListView(
+          children: <Widget>[
+            Container(
+              height: 30.0,
+            ),
+            ListTile(
+              title: Text(
+                'Fiche Dossier',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xFFD66746)),
+              ),
+              //leading: Icon(Icons.folder),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Fiche de Temps',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF101751))),
+              //leading: Icon(Icons.people),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Procédures',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF101751))),
+              //leading: Icon(Icons.star),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+            ListTile(
+              title: Text('Documents',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF101751))),
+              //leading: Icon(Icons.timer),
+              onTap: () {
+                print("Clicked");
+              },
+            ),
+          ],
+        )),
+      ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
             decoration: BoxDecoration(
@@ -34,7 +93,16 @@ class _FoldersState extends State<Folders> {
                   IconButton(
                     icon: Image.asset('assets/images/Fichier15@2x.png',
                         height: 40),
-                    onPressed: () {},
+                    onPressed: () {
+                      //open or close drawer manually
+                      if (scaffoldKey.currentState!.isDrawerOpen) {
+                        scaffoldKey.currentState!.closeDrawer();
+                        //close drawer, if drawer is open
+                      } else {
+                        scaffoldKey.currentState!.openDrawer();
+                        //open drawer, if drawer is closed
+                      }
+                    },
                   ),
                   SizedBox(
                     width: 80,

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:avocat/shared/card_space_between.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,6 @@ class _ListOfFoldersState extends State<ListOfFolders> {
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                // ignore: prefer_const_constructors
                 ImageIcon(
                   AssetImage("assets/images/Dossiers.png"),
                   size: 25,
@@ -66,7 +65,6 @@ class _ListOfFoldersState extends State<ListOfFolders> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30),
-            // ignore: prefer_const_constructors
             child: Text(
               "Liste des Dossiers",
               style: TextStyle(

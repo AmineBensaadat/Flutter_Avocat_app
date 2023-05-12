@@ -45,6 +45,7 @@ dependencies:
   archive: ^3.3.7
   ini: ^2.1.0
   path_provider: ^2.0.14
+  syncfusion_flutter_gauges: ^21.1.35
   xml:
   # xml: ^6.3.0
 

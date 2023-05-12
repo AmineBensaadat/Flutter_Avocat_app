@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code, duplicate_ignore, avoid_print, prefer_interpolation_to_compose_strings
 
 import 'package:avocat/pages/signup.dart';
 import 'package:flutter/material.dart';

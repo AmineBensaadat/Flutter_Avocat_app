@@ -1,9 +1,10 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import '../shared/appbar.dart';
 import '../shared/custom_bottom_navigation_bar.dart';
 import '../shared/dashboard_cards.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class DashboardTwoColumnCards extends StatefulWidget {
   const DashboardTwoColumnCards({super.key});
@@ -27,7 +28,6 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
               mainAxisAlignment: MainAxisAlignment.start,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                // ignore: prefer_const_constructors
                 SizedBox(
                   width: 15,
                 ),
@@ -64,7 +64,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                       flex: 1,
                       fit: FlexFit.loose,
                       child: Container(
-                        height: 150,
+                        height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -74,6 +74,9 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                             centerChilds: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
+                                SizedBox(
+                                  height: 25,
+                                ),
                                 Text(
                                   "5",
                                   style: TextStyle(
@@ -99,7 +102,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                       flex: 1,
                       fit: FlexFit.loose,
                       child: Container(
-                        height: 150,
+                        height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -109,6 +112,9 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                             centerChilds: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
+                                SizedBox(
+                                  height: 35,
+                                ),
                                 Text(
                                   "42 500.00",
                                   style: TextStyle(
@@ -145,7 +151,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                       flex: 1,
                       fit: FlexFit.loose,
                       child: Container(
-                        height: 150,
+                        height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -155,12 +161,42 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                             centerChilds: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
-                                Text(
-                                  "42",
-                                  style: TextStyle(
-                                      fontSize: 45,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF101751)),
+                                Container(
+                                  height: 100,
+                                  child: Container(
+                                      child: SfRadialGauge(axes: <RadialAxis>[
+                                    RadialAxis(
+                                        minimum: 0,
+                                        maximum: 150,
+                                        ranges: <GaugeRange>[
+                                          GaugeRange(
+                                              startValue: 0,
+                                              endValue: 50,
+                                              color: Colors.green,
+                                              startWidth: 10,
+                                              endWidth: 10),
+                                        ],
+                                        // ignore: prefer_const_literals_to_create_immutables
+                                        pointers: <GaugePointer>[
+                                          NeedlePointer(
+                                              value: 50,
+                                              lengthUnit: GaugeSizeUnit.factor,
+                                              needleLength: 0.75,
+                                              needleStartWidth: 0,
+                                              needleEndWidth: 6)
+                                        ],
+                                        annotations: <GaugeAnnotation>[
+                                          GaugeAnnotation(
+                                              widget: Container(
+                                                  child: Text('50.0',
+                                                      style: TextStyle(
+                                                          fontSize: 10,
+                                                          fontWeight: FontWeight
+                                                              .bold))),
+                                              angle: 90,
+                                              positionFactor: 0.5)
+                                        ])
+                                  ])),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 15),
@@ -180,7 +216,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                       flex: 1,
                       fit: FlexFit.loose,
                       child: Container(
-                        height: 150,
+                        height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -190,12 +226,42 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                             centerChilds: Column(
                               // ignore: prefer_const_literals_to_create_immutables
                               children: [
-                                Text(
-                                  "42",
-                                  style: TextStyle(
-                                      fontSize: 45,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xFF101751)),
+                                Container(
+                                  height: 100,
+                                  child: Container(
+                                      child: SfRadialGauge(axes: <RadialAxis>[
+                                    RadialAxis(
+                                        minimum: 0,
+                                        maximum: 150,
+                                        ranges: <GaugeRange>[
+                                          GaugeRange(
+                                              startValue: 0,
+                                              endValue: 20,
+                                              color: Colors.red,
+                                              startWidth: 10,
+                                              endWidth: 10),
+                                        ],
+                                        // ignore: prefer_const_literals_to_create_immutables
+                                        pointers: <GaugePointer>[
+                                          NeedlePointer(
+                                              value: 20,
+                                              lengthUnit: GaugeSizeUnit.factor,
+                                              needleLength: 0.75,
+                                              needleStartWidth: 0,
+                                              needleEndWidth: 6)
+                                        ],
+                                        annotations: <GaugeAnnotation>[
+                                          GaugeAnnotation(
+                                              widget: Container(
+                                                  child: Text('10.0',
+                                                      style: TextStyle(
+                                                          fontSize: 10,
+                                                          fontWeight: FontWeight
+                                                              .bold))),
+                                              angle: 90,
+                                              positionFactor: 0.5)
+                                        ])
+                                  ])),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 15),

@@ -26,7 +26,6 @@ class _SimpleDashboardState extends State<SimpleDashboard> {
               mainAxisAlignment: MainAxisAlignment.start,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                // ignore: prefer_const_constructors
                 SizedBox(
                   width: 15,
                 ),

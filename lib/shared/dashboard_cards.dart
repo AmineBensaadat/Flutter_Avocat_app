@@ -25,7 +25,7 @@ class DashboardCards extends StatelessWidget {
       //height: 150,
       alignment: Alignment.center,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+        padding: const EdgeInsets.fromLTRB(0, 30, 0, 20),
         child: Container(
           child: centerChilds,
         ),

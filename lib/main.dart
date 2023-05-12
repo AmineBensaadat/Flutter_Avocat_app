@@ -24,9 +24,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/Foldes',
-      // initialRoute: '/ListOfFolders',
-      // initialRoute: '/SimpleDashboard',
-      // initialRoute: '/DashboardTwoColumnCards',
+      //initialRoute: '/ListOfFolders',
+      //initialRoute: '/SimpleDashboard',
+      // on the FirstScreen widget.
+      //initialRoute: '/DashboardTwoColumnCards',
 
       // routes
       routes: {
