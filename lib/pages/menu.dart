@@ -47,8 +47,8 @@ class _MenuState extends State<Menu> {
                       Container(
                         padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
                         child: MenuIconButton(
-                            icon_img: 'assets/images/Cltsgriséexxxhdpi.png',
-                            screen_name: "screen to open"),
+                            icon_img: 'assets/images/Clients.png',
+                            screen_name: "/ListOfFolders"),
                       ),
                       Container(
                         padding: EdgeInsets.only(right: 10),
@@ -56,7 +56,7 @@ class _MenuState extends State<Menu> {
                           "Clients",
                           style: TextStyle(
                               fontSize: 15,
-                              color: Color(0xFFe7e7e7),
+                              color: Color(0xFF101751),
                               fontWeight: FontWeight.bold),
                         ),
                       )
@@ -68,8 +68,8 @@ class _MenuState extends State<Menu> {
                       Container(
                         padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
                         child: MenuIconButton(
-                            icon_img: 'assets/images/Contactsgriséxxxhdpi.png',
-                            screen_name: "screen to open"),
+                            icon_img: 'assets/images/Contacts.png',
+                            screen_name: "/ListOfFolders"),
                       ),
                       Container(
                         padding: EdgeInsets.only(right: 10),
@@ -77,7 +77,7 @@ class _MenuState extends State<Menu> {
                           "Contacts",
                           style: TextStyle(
                               fontSize: 15,
-                              color: Color(0xFFe7e7e7),
+                              color: Color(0xFF101751),
                               fontWeight: FontWeight.bold),
                         ),
                       )
@@ -89,16 +89,15 @@ class _MenuState extends State<Menu> {
                       Container(
                           padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
                           child: MenuIconButton(
-                              icon_img:
-                                  'assets/images/Dossiersgriséexxxhdpi.png',
-                              screen_name: "screen to open")),
+                              icon_img: 'assets/images/Dossiers.png',
+                              screen_name: "/ListOfFolders")),
                       Container(
                         padding: EdgeInsets.only(right: 10),
                         child: Text(
                           "Dossiers",
                           style: TextStyle(
                               fontSize: 15,
-                              color: Color(0xFFe7e7e7),
+                              color: Color(0xFF101751),
                               fontWeight: FontWeight.bold),
                         ),
                       )
@@ -122,7 +121,7 @@ class _MenuState extends State<Menu> {
                         padding: EdgeInsets.fromLTRB(0, 20, 10, 0),
                         child: MenuIconButton(
                             icon_img: 'assets/images/Agenda.png',
-                            screen_name: "screen to open"),
+                            screen_name: "/Calender"),
                       ),
                       Container(
                         padding: EdgeInsets.only(right: 10),
@@ -130,7 +129,7 @@ class _MenuState extends State<Menu> {
                           "Agenda",
                           style: TextStyle(
                               fontSize: 15,
-                              color: Color(0xFFe7e7e7),
+                              color: Color(0xFF101751),
                               fontWeight: FontWeight.bold),
                         ),
                       )

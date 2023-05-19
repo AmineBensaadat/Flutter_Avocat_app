@@ -17,7 +17,7 @@ class MenuIconButton extends StatelessWidget {
     return IconButton(
       icon: Image.asset(icon_img),
       onPressed: () {
-        print(screen_name);
+        Navigator.pushNamed(context, screen_name);
       },
     );
   }

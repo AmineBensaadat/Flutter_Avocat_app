@@ -12,9 +12,26 @@ class ListOfFolders extends StatefulWidget {
   State<ListOfFolders> createState() => _ListOfFoldersState();
 }
 
+class FoldersList {
+  String title, subTitle;
+  FoldersList({required this.title, required this.subTitle});
+}
+
 class _ListOfFoldersState extends State<ListOfFolders> {
+  List<FoldersList> items = [];
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      items = List.of([
+        FoldersList(title: " Tribunal Casa R", subTitle: '123525'),
+        FoldersList(title: "طلب الطلاق ", subTitle: '3221'),
+        FoldersList(title: " الطعن في دستورية الحظر", subTitle: '2424'),
+        FoldersList(title: " Rendez-vous - Tribunal Casa R", subTitle: '42424'),
+        FoldersList(title: " Rendez-vous - Tribunal Casa R", subTitle: '78578'),
+        FoldersList(title: " Rendez-vous - Tribunal Casa R", subTitle: '75785'),
+        FoldersList(title: " Rendez-vous - Tribunal Casa R", subTitle: '4755'),
+      ]);
+    });
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFE5E7EA),
@@ -74,293 +91,12 @@ class _ListOfFoldersState extends State<ListOfFolders> {
             ),
           ),
           Expanded(
-              child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20, top: 15),
-              // ignore: prefer_const_literals_to_create_immutables
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 5, 15, 10),
-                  child: CardSpaceBetween(
-                      backgroundColor: Colors.white,
-                      BorderRadiusNumbre: 10,
-                      heightNumbre: 50,
-                      firstTile: Text(
-                        'Rendez Vous',
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      secondTitle: Text(
-                        "12365",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF101751)),
-                      ),
-                      iconButton: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
-                        child: Container(
-                          height: 25,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            color: Color(0xFF101751),
-                          ),
-                        ),
-                      )),
-                ),
-              ]),
-            ),
-          )),
+              child: ListView.builder(
+                  itemCount: items.length,
+                  itemBuilder: (context, index) {
+                    final item = items[index];
+                    return ListViewFolders(item);
+                  })),
         ]),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Container(
@@ -376,4 +112,42 @@ class _ListOfFoldersState extends State<ListOfFolders> {
       ),
     );
   }
+
+  Widget ListViewFolders(FoldersList item) => Container(
+        margin: EdgeInsets.all(8.0),
+        height: 60,
+        child: CardSpaceBetween(
+            backgroundColor: Colors.white,
+            BorderRadiusNumbre: 10,
+            heightNumbre: 50,
+            firstTile: Text(
+              item.title,
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF101751)),
+            ),
+            secondTitle: Text(
+              item.subTitle,
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF101751)),
+            ),
+            iconButton: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 15, 15, 15),
+              child: Container(
+                height: 25,
+                child: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Color(0xFF101751),
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/Folders');
+                  },
+                ),
+              ),
+            )),
+      );
 }

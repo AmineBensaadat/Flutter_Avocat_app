@@ -9,8 +9,6 @@ class Appbar extends StatefulWidget implements PreferredSizeWidget {
   State<Appbar> createState() => _AppbarState();
 
   @override
-  // ignore: todo
-  // TODO: implement preferredSize
   Size get preferredSize => const Size(double.maxFinite, 130);
 }
 

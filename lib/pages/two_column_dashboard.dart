@@ -15,8 +15,18 @@ class DashboardTwoColumnCards extends StatefulWidget {
 }
 
 class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
+  double tauxExecution = 0;
+  double factureeCemois = 0;
+  double recouvrement = 0;
+  double utilisation = 0;
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      tauxExecution = 60;
+      factureeCemois = 42500;
+      recouvrement = 100;
+      utilisation = 50;
+    });
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -78,7 +88,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                   height: 25,
                                 ),
                                 Text(
-                                  "5",
+                                  tauxExecution.toString(),
                                   style: TextStyle(
                                       fontSize: 45,
                                       fontWeight: FontWeight.w500,
@@ -116,7 +126,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                   height: 35,
                                 ),
                                 Text(
-                                  "42 500.00",
+                                  factureeCemois.toString(),
                                   style: TextStyle(
                                       fontSize: 25,
                                       fontWeight: FontWeight.w500,
@@ -171,7 +181,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                         ranges: <GaugeRange>[
                                           GaugeRange(
                                               startValue: 0,
-                                              endValue: 50,
+                                              endValue: recouvrement,
                                               color: Colors.green,
                                               startWidth: 10,
                                               endWidth: 10),
@@ -179,7 +189,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                         // ignore: prefer_const_literals_to_create_immutables
                                         pointers: <GaugePointer>[
                                           NeedlePointer(
-                                              value: 50,
+                                              value: recouvrement,
                                               lengthUnit: GaugeSizeUnit.factor,
                                               needleLength: 0.75,
                                               needleStartWidth: 0,
@@ -188,7 +198,8 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                         annotations: <GaugeAnnotation>[
                                           GaugeAnnotation(
                                               widget: Container(
-                                                  child: Text('50.0',
+                                                  child: Text(
+                                                      recouvrement.toString(),
                                                       style: TextStyle(
                                                           fontSize: 10,
                                                           fontWeight: FontWeight
@@ -236,7 +247,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                         ranges: <GaugeRange>[
                                           GaugeRange(
                                               startValue: 0,
-                                              endValue: 20,
+                                              endValue: utilisation,
                                               color: Colors.red,
                                               startWidth: 10,
                                               endWidth: 10),
@@ -244,7 +255,7 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                         // ignore: prefer_const_literals_to_create_immutables
                                         pointers: <GaugePointer>[
                                           NeedlePointer(
-                                              value: 20,
+                                              value: utilisation,
                                               lengthUnit: GaugeSizeUnit.factor,
                                               needleLength: 0.75,
                                               needleStartWidth: 0,
@@ -253,7 +264,8 @@ class _DashboardTwoColumnCardsState extends State<DashboardTwoColumnCards> {
                                         annotations: <GaugeAnnotation>[
                                           GaugeAnnotation(
                                               widget: Container(
-                                                  child: Text('10.0',
+                                                  child: Text(
+                                                      utilisation.toString(),
                                                       style: TextStyle(
                                                           fontSize: 10,
                                                           fontWeight: FontWeight

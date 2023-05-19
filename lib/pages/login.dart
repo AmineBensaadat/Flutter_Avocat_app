@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code, duplicate_ignore, avoid_print, prefer_interpolation_to_compose_strings
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, dead_code, duplicate_ignore, avoid_print, prefer_interpolation_to_compose_strings, sort_child_properties_last
 
 import 'package:avocat/pages/signup.dart';
+import 'package:avocat/pages/two_column_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:avocat/services/ntsoft.dart';
@@ -9,27 +10,10 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
-  static const customSwatch = MaterialColor(
-    0xFFFF5252,
-    <int, Color>{
-      50: Color(0xFFFFEBEE),
-      100: Color(0xFFFFCDD2),
-      200: Color(0xFFEF9A9A),
-      300: Color(0xFFE57373),
-      400: Color(0xFFEF5350),
-      500: Color(0xFFFF5252),
-      600: Color(0xFFE53935),
-      700: Color(0xFFD32F2F),
-      800: Color(0xFFC62828),
-      900: Color(0xFFB71C1C),
-    },
-  );
 
   @override
   Widget build(BuildContext context) {
     ValueNotifier<bool> isDialOpen = ValueNotifier(false);
-    //bool customDialRoot = true;
-    //bool extend = false;
     bool rmIcons = false;
     final loginController = TextEditingController();
     final passwordController = TextEditingController();
@@ -63,75 +47,7 @@ class Login extends StatelessWidget {
                           SizedBox(
                             height: 90,
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(66),
-                            ),
-                            width: 266,
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: TextField(
-                              controller: loginController,
-                              decoration: InputDecoration(
-                                  icon: Icon(
-                                    Icons.person,
-                                    color: Color(0xFFD66746),
-                                  ),
-                                  hintText: "Identifiant :",
-                                  border: InputBorder.none),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 23,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(66),
-                            ),
-                            width: 266,
-                            padding: EdgeInsets.symmetric(horizontal: 16),
-                            child: TextField(
-                              controller: passwordController,
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                  suffix: Icon(
-                                    Icons.visibility,
-                                    color: Color(0xFFD66746),
-                                  ),
-                                  icon: Icon(
-                                    Icons.lock,
-                                    color: Color(0xFFD66746),
-                                  ),
-                                  hintText: "Password :",
-                                  border: InputBorder.none),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 17,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {
-                              testA(context);
-                            },
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(Color(0xFFD66746)),
-                              padding: MaterialStateProperty.all(
-                                  EdgeInsets.symmetric(
-                                      horizontal: 90, vertical: 10)),
-                              shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(27))),
-                            ),
-                            child: Text(
-                              "connexion",
-                              style: TextStyle(fontSize: 20),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
+                          LoginFrom(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -166,40 +82,18 @@ class Login extends StatelessWidget {
           ),
         ),
       ),
-      //floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: SpeedDial(
-        // animatedIcon: AnimatedIcons.menu_close,
-        // animatedIconTheme: IconThemeData(size: 22.0),
-        // / This is ignored if animatedIcon is non null
-        // child: Text("open"),
-        // activeChild: Text("close"),
         icon: Icons.add,
         activeIcon: Icons.close,
         spacing: 3,
         openCloseDial: isDialOpen,
         childPadding: const EdgeInsets.all(5),
         spaceBetweenChildren: 4,
-        // dialRoot: customDialRoot? (ctx, open, toggleChildren) {
-        //   return ElevatedButton(
-        //     onPressed: toggleChildren,
-        //     style: ElevatedButton.styleFrom(
-        //       primary: Colors.blue[900],
-        //       padding: const EdgeInsets.symmetric(
-        //           horizontal: 22, vertical: 18),
-        //     ),
-        //     child: const Text(
-        //       "Custom Dial Root",
-        //       style: TextStyle(fontSize: 17),
-        //     ),
-        //   );
-        // } : null,
+
         buttonSize:
             Size.fromRadius(20), // SpeedDial size which defaults to 56 itself
         // iconTheme: IconThemeData(size: 22),
 
-        /// Transition Builder between label and activeLabel, defaults to FadeTransition.
-        // labelTransitionBuilder: (widget, animation) => ScaleTransition(scale: animation,child: widget),
-        /// The below button size defaults to 56 itself, its the SpeedDial childrens size
         childrenButtonSize: Size.fromRadius(20),
         visible: true,
         direction: SpeedDialDirection.up,
@@ -224,10 +118,6 @@ class Login extends StatelessWidget {
         animationCurve: Curves.elasticInOut,
         isOpenOnStart: false,
         animationDuration: const Duration(milliseconds: 500),
-        // shape: customDialRoot
-        //     ? const RoundedRectangleBorder()
-        //     : const StadiumBorder(),
-        // childMargin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         children: [
           SpeedDialChild(
             child: !rmIcons ? const Icon(Icons.password_outlined) : null,
@@ -250,9 +140,7 @@ class Login extends StatelessWidget {
               onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const Signup()),
-                  )
-//Navigator.pushNamed(context, "/signup"),
-              ),
+                  )),
           SpeedDialChild(
             // ignore: dead_code
             child: !rmIcons ? const Icon(Icons.view_sidebar) : null,
@@ -325,4 +213,163 @@ Future<void> testAOK(String data, List arguments) async {
     btnOkOnPress: () {},
   ).show();
   return;
+}
+
+// Create a Form widget.
+class LoginFrom extends StatefulWidget {
+  const LoginFrom({super.key});
+
+  @override
+  LoginFromState createState() {
+    return LoginFromState();
+  }
+}
+
+// Create a corresponding State class.
+// This class holds data related to the form.
+class LoginFromState extends State<LoginFrom> {
+  // Create a global key that uniquely identifies the Form widget
+  // and allows validation of the form.
+  //
+  // Note: This is a GlobalKey<FormState>,
+  // not a GlobalKey<LoginFromState>.
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    final loginController = TextEditingController();
+    final passwordController = TextEditingController();
+    // Build a Form widget using the _formKey created above.
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          FractionallySizedBox(
+            widthFactor: 0.6,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: TextFormField(
+                controller: loginController,
+                decoration: InputDecoration(
+                    errorStyle: TextStyle(height: 0),
+                    errorMaxLines: 1,
+                    errorText: '',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 0),
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.only(
+                          left: 10), // add padding to adjust icon
+                      child: Icon(
+                        Icons.person,
+                        color: Color(0xFFD66746),
+                      ),
+                    ),
+                    hintText: "Identifiant :",
+                    border: InputBorder.none),
+                // The validator receives the text that the user has entered.
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    String errorMsg = 'l\'identifiant ne peut pas être vide';
+                    awesomeDialogError(errorMsg);
+                    return '';
+                  }
+                  return null;
+                },
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 23,
+          ),
+          FractionallySizedBox(
+            widthFactor: 0.6,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: TextFormField(
+                obscureText: true,
+                controller: passwordController,
+                decoration: InputDecoration(
+                    errorStyle: TextStyle(height: 0),
+                    errorMaxLines: 1,
+                    errorText: '',
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 15, horizontal: 0),
+                    prefixIcon: Padding(
+                      padding: EdgeInsets.only(
+                          left: 10), // add padding to adjust icon
+                      child: Icon(
+                        Icons.lock,
+                        color: Color(0xFFD66746),
+                      ),
+                    ),
+                    hintText: "Password :",
+                    border: InputBorder.none),
+                // The validator receives the text that the user has entered.
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    String errorMsg = 'le mot de passe ne peut pas être vide';
+                    awesomeDialogError(errorMsg);
+                    return '';
+                  }
+                  return null;
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            child: ElevatedButton(
+                onPressed: () {
+                  // Validate returns true if the form is valid, or false otherwise.
+                  if (_formKey.currentState!.validate()) {
+                    // If the form is valid, display a snackbar. In the real world,
+                    // you'd often call a server or save the information in a database.
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Processing Data')),
+                    );
+
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DashboardTwoColumnCards()),
+                    );
+                  }
+                },
+                child: Text(
+                  "connexion",
+                  style: TextStyle(fontSize: 20),
+                ),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Color(0xFFD66746)),
+                  padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 80, vertical: 10)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(27))),
+                )),
+          ),
+        ],
+      ),
+    );
+  }
+
+  awesomeDialogError(errorMsg) {
+    AwesomeDialog(
+      context: context,
+      dialogType: DialogType.error,
+      animType: AnimType.rightSlide,
+      headerAnimationLoop: false,
+      title: 'Error',
+      desc: errorMsg,
+      btnOkOnPress: () {},
+      btnOkIcon: Icons.cancel,
+      btnOkColor: Colors.red,
+    ).show();
+  }
 }

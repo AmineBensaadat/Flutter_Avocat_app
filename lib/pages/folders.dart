@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, sized_box_for_whitespace, avoid_print
 
 import 'package:flutter/material.dart';
 
@@ -14,8 +14,33 @@ class Folders extends StatefulWidget {
 
 class _FoldersState extends State<Folders> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  String name = '';
+  String ref = '';
+  String client = '';
+  String createdAt = '';
+  String importance = '';
+  String gestionnaire = '';
+  String lieu = '';
+  String juridiction = '';
+  String departement = '';
+  String region = '';
+  String nature = '';
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      name = 'Amine Bensaadat';
+      ref = '512541';
+      client = 'ATIJARI';
+      createdAt = '30/04/2023';
+      juridiction = 'CASABLANCA';
+      importance = 'Elvée';
+      gestionnaire = 'Mohmed';
+      lieu = 'CASABLANCA';
+      juridiction = 'Nationale';
+      departement = 'Logistique';
+      region = 'ANFA';
+      nature = 'A';
+    });
     return SafeArea(
         child: Scaffold(
       appBar: Appbar(),
@@ -228,7 +253,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(name))),
                                   ),
                                 ],
                               )),
@@ -258,7 +283,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(ref))),
                                   ),
                                 ],
                               )),
@@ -288,7 +313,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(client))),
                                   ),
                                 ],
                               )),
@@ -318,7 +343,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(createdAt))),
                                   ),
                                 ],
                               )),
@@ -348,7 +373,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(importance))),
                                   ),
                                 ],
                               )),
@@ -378,7 +403,8 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child:
+                                            Center(child: Text(gestionnaire))),
                                   ),
                                 ],
                               )),
@@ -436,7 +462,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(lieu))),
                                   ),
                                 ],
                               )),
@@ -466,7 +492,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(nature))),
                                   ),
                                 ],
                               )),
@@ -496,7 +522,8 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child:
+                                            Center(child: Text(juridiction))),
                                   ),
                                 ],
                               )),
@@ -526,7 +553,8 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child:
+                                            Center(child: Text(departement))),
                                   ),
                                 ],
                               )),
@@ -556,7 +584,7 @@ class _FoldersState extends State<Folders> {
                                                 BorderRadius.circular(20),
                                             border: Border(),
                                             color: Color(0xFFF4F6FA)),
-                                        child: Center(child: Text("ABC"))),
+                                        child: Center(child: Text(region))),
                                   ),
                                 ],
                               )),

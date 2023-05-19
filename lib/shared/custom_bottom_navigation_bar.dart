@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, prefer_const_constructors_in_immutables
 
+import 'package:avocat/pages/menu.dart';
+import 'package:avocat/pages/two_column_dashboard.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -22,7 +24,21 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
       ],
       currentIndex: 0,
-      onTap: (int index) {},
+      onTap: (int index) {
+        if (index == 0) {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DashboardTwoColumnCards()),
+              ModalRoute.withName("/DashboardTwoColumnCards"));
+        }
+        if (index == 1) {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => Menu()),
+              ModalRoute.withName("/menu"));
+        }
+      },
     );
   }
 }
